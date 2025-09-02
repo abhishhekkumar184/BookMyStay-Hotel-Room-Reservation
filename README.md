@@ -1,1 +1,2 @@
 # BookMyStay-Hotel-Room-Reservation
+BookMyStay is a hotel room reservation system that makes booking easy and hassle-free. Users can reserve rooms, check availability, and manage their stays in just a few clicks. The system also includes an admin panel to manage rooms, customer details, and bookings efficiently. With a simple interface and secure database, it is a convenient solution for both customers and hotel staff.
