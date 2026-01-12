@@ -68,7 +68,7 @@ class Roombooking:
         label_room_types=Label(Labelframeleft,text="Room Types",font=("arial",12,"bold"),padx=2,pady=6)
         label_room_types.grid(row=3,column=0,sticky=W)
 
-        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
         my_cursor=conn.cursor()
         my_cursor.execute("select RoomType from details")
         ide=my_cursor.fetchall()
@@ -84,7 +84,7 @@ class Roombooking:
         #txt_room_availabel=ttk.Entry(Labelframeleft,textvariable=self.var_roomavailable,font=("arial",13,"bold"),width=29)
         #txt_room_availabel.grid(row=4,column=1)
 
-        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
         my_cursor=conn.cursor()
         my_cursor.execute("select RoomNo from details")
         rows=my_cursor.fetchall()
@@ -223,7 +223,7 @@ class Roombooking:
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else: 
             try:
-                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
                 my_cursor=conn.cursor()
                 my_cursor.execute(""" INSERT INTO room (`Contact`, `check-In`, check_out, roomtype, roomavailable, meal, noofdays)
                                        VALUES (%s, %s, %s, %s, %s, %s, %s)""", (
@@ -248,7 +248,7 @@ class Roombooking:
 
     # ------------------fetch data--------------
     def fetch_data(self):
-        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
         my_cursor=conn.cursor()
         my_cursor.execute("select*from room")
         rows=my_cursor.fetchall()
@@ -285,7 +285,7 @@ class Roombooking:
         if self.var_contact.get()=="":
             messagebox.showerror("Error","Plaease enter mobile number",parent=self.root)
         else: 
-            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
             my_cursor=conn.cursor()
             my_cursor.execute("""UPDATE room SET `check-In`=%s, check_out=%s, roomtype=%s, roomavailable=%s, noofdays=%s WHERE Contact=%s""", (
                                                               self.var_checkin.get(),
@@ -310,7 +310,7 @@ class Roombooking:
     def mDelete(self):
         mDelete=messagebox.askyesno("Hotel Application","Do you want delete this customer",parent=self.root)
         if mDelete>0:
-            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
             my_cursor=conn.cursor()
             query="delete from room where Contact =%s"
             value=(self.var_contact.get(),)
@@ -341,7 +341,7 @@ class Roombooking:
         if self.var_contact.get()=="":
             messagebox.showerror("Error","Please enter Contact Number",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
             my_cursor=conn.cursor()
             query=("select Name from customer where Mobile=%s")
             value=(self.var_contact.get(),)
@@ -364,7 +364,7 @@ class Roombooking:
                 lbl.place(x=90,y=0)
 
 # -------------Gender---------------------
-                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
                 my_cursor=conn.cursor()
                 query=("select Gender from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -378,7 +378,7 @@ class Roombooking:
                 lbl2.place(x=90,y=30)
 
 # -------------email---------------------
-                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
                 my_cursor=conn.cursor()
                 query=("select Email from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -392,7 +392,7 @@ class Roombooking:
                 lblemail.place(x=90,y=60)
 
 # -------------Nationality---------------------
-                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
                 my_cursor=conn.cursor()
                 query=("select Nationality from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -406,7 +406,7 @@ class Roombooking:
                 lblNationality.place(x=90,y=90)
 
 # -------------Adress---------------------
-                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+                conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
                 my_cursor=conn.cursor()
                 query=("select Adress from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -421,7 +421,7 @@ class Roombooking:
 
 # -------------------------------search system---------------------------
     def search(self):
-        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
         my_cursor=conn.cursor()
 
         my_cursor.execute("SELECT * FROM room WHERE " + str(self.search_var.get()) + " LIKE '%" + str(self.txt_search.get()) + "%'")

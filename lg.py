@@ -107,7 +107,7 @@ class Register:
             messagebox.showerror("Error", "Please agree to our terms and conditions", parent=self.root)
         else:
             try:
-                conn = mysql.connector.connect(host="127.0.0.1", user="root", password="Prince@123", database="hotel_management")
+                conn = mysql.connector.connect(host="127.0.0.1", user="root", password="**********", database="hotel_management")
                 my_cursor = conn.cursor()
                 query = ("SELECT * FROM register WHERE email=%s")
                 value = (self.var_email.get(),)
@@ -174,7 +174,7 @@ class ForgotPassword:
              messagebox.showerror("Error", "All fields are required", parent=self.root)
         else:
             try:
-                conn = mysql.connector.connect(host="127.0.0.1", user="root", password="Prince@123", database="hotel_management")
+                conn = mysql.connector.connect(host="127.0.0.1", user="root", password="**********", database="hotel_management")
                 my_cursor = conn.cursor()
                 query = ("SELECT * FROM register WHERE email=%s AND securityQ=%s AND securityA=%s")
                 value = (self.txt_email.get(), self.combo_security_Q.get(), self.txt_security.get())
@@ -294,7 +294,7 @@ class Login_Window:
             conn = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
-                password="Prince@123", 
+                password="**********", 
                 database="hotel_management"
             )
             my_cursor = conn.cursor()
@@ -332,7 +332,7 @@ class Login_Window:
 if __name__ == "__main__":
    
     try:
-        conn = mysql.connector.connect(host="127.0.0.1", user="root", password="Prince@123", database="hotel_management")
+        conn = mysql.connector.connect(host="127.0.0.1", user="root", password="**********", database="hotel_management")
         my_cursor = conn.cursor()
         
         my_cursor.execute("""

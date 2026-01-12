@@ -120,7 +120,7 @@ class DetailsRoom:
             conn = mysql.connector.connect(
                 host="127.0.0.1",
                 username="root",
-                password="Prince@123",
+                password="**********",
                 database="hotel_management"
             )
             my_cursor = conn.cursor()
@@ -140,7 +140,7 @@ class DetailsRoom:
 
     
     def fetch_data(self):
-        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+        conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
         my_cursor=conn.cursor()
         my_cursor.execute("select*from details")
         rows=my_cursor.fetchall()
@@ -168,7 +168,7 @@ class DetailsRoom:
         if self.var_floor.get()=="":
             messagebox.showerror("Error","Plaease enter floor number",parent=self.root)
         else: 
-            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
             my_cursor=conn.cursor()
             my_cursor.execute("""UPDATE  details set  `Floor`=%s, RoomType=%s WHERE RoomNo=%s""", (
                                                               self.var_floor.get(),
@@ -188,7 +188,7 @@ class DetailsRoom:
     def mDelete(self):
         mDelete=messagebox.askyesno("Hotel Application","Do you want delete this room details",parent=self.root)
         if mDelete>0:
-            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="Prince@123",database="hotel_management")
+            conn=mysql.connector.connect(host="127.0.0.1",username="root",password="**********",database="hotel_management")
             my_cursor=conn.cursor()
             query="delete from details where RoomNo =%s"
             value=(self.var_RoomNo.get(),)

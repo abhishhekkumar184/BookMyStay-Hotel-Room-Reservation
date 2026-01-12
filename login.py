@@ -90,7 +90,7 @@ class Login_Window:
             conn = mysql.connector.connect(
                 host="127.0.0.1",
                 username="root",
-                password="Prince@123",
+                password="**********",
                 database="hotel_management"
             )
             my_cursor = conn.cursor()
